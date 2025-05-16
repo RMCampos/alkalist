@@ -7,10 +7,19 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Separator } from "@/components/ui/separator"
 import { Food } from "@/types/food"
 import { foodCompleteList } from "./food-complete-list"
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+} from "@/components/ui/dialog"
+import Image from "next/image"
 
 export default function Home() {
   const [query, setQuery] = useState<string>("")
   const [filter, setFilter] = useState<string>("everything")
+  const [selectedFood, setSelectedFood] = useState<Food | null>(null)
 
   const filteredFoods = foodCompleteList.sort((a, b) => a.name.localeCompare(b.name)).filter((food: Food) => {
     const matchesQuery = food.name.toLowerCase().includes(query.toLowerCase())
@@ -28,10 +37,15 @@ export default function Home() {
       <div className="flex-grow flex flex-col items-center px-4 py-8 w-full">
         <h1 className="text-3xl sm:text-4xl font-bold mt-10 mb-6 text-center">AlkaList</h1>
 
+        <p className="text-muted-foreground text-center max-w-xl mb-6">
+          The alkaline diet focuses on eating foods that help maintain the body&apos;s optimal pH balance.
+          It emphasizes fruits, vegetables, and plant-based ingredients while avoiding processed or acidic foods.
+        </p>
+
         <div className="flex flex-col items-center w-full max-w-md gap-4 animate-fade-in animate-duration-500 animate-ease-in">
           <Input
             type="text"
-            placeholder="Buscar alimento (exemplo arroz, óleo...)"
+            placeholder="Filtar alimentos (exemplo arroz, óleo...)"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             className="w-full max-w-md mb-6"
@@ -65,18 +79,40 @@ export default function Home() {
           {filteredFoods.map((food, index) => (
             <Card
               key={index}
-              className="animate-slide-up animate-duration-700 animate-ease-out animate-delay-[300ms]"
+              className="relative overflow-hidden"
             >
-              <CardContent className="p-6 flex justify-between items-center text-lg">
-                <span className="font-semibold">{food.name}</span>
-                <span className={`text-sm ${food.type === "alkaline" ? "text-green-500" : "text-red-400"}`}>
-                  {food.type === "alkaline" ? "Alcalino" : "Ácido"}
-                </span>
+              <CardContent className="p-6 flex flex-col gap-2 text-lg">
+                <div className="flex justify-between items-center">
+                  <span className="font-medium">{food.name}</span>
+                  <span className={`text-sm ${food.type === "alkaline" ? "text-green-600" : "text-red-500"}`}>
+                    {food.type === "alkaline" ? "Alcalino" : "Ácido"}
+                  </span>
+                </div>
               </CardContent>
+
+              {/* Info Button Bottom-Left */}
+              <button
+                onClick={() => setSelectedFood(food)}
+                className="absolute bottom-4 left-5 text-blue-500 hover:text-blue-700 text-sm"
+                aria-label={`More info about ${food.name}`}
+              >
+                <Image src="/icons/info-icon.png" alt="Info" width={26} height={26} className="w-5 h-5" />
+              </button>
             </Card>
           ))}
         </div>
       </div>
+
+      <Dialog open={!!selectedFood} onOpenChange={() => setSelectedFood(null)}>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>{selectedFood?.name}</DialogTitle>
+            <DialogDescription className="mt-4">
+              {selectedFood && selectedFood.comment}
+            </DialogDescription>
+          </DialogHeader>
+        </DialogContent>
+      </Dialog>
 
       <Separator className="my-10 w-full max-w-md" />
 

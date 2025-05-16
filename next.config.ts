@@ -2,13 +2,11 @@ import type { NextConfig } from "next";
 
 const isProd = process.env.NODE_ENV === 'production';
 
-module.exports = {
-  output: 'export',
-  basePath: isProd ? '/alkalist' : '',
-}
-
 const nextConfig: NextConfig = {
   /* config options here */
+  output: 'export',
+  basePath: isProd ? '/alkalist' : '',
+  images: { unoptimized: true },
 };
 
 export default nextConfig;

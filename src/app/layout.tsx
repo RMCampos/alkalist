@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 const basePath = process.env.NODE_ENV === 'production' ? '/alkalist' : ''
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://rmcampos.github.io/alkalist'),
+  metadataBase: new URL('https://rmcampos.github.io/'),
   title: "AlkaList",
   description: "Saiba o que comer e evitar na dieta alcalina.",
   themeColor: '#0a0a0a',

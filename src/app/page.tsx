@@ -38,8 +38,14 @@ export default function Home() {
         <h1 className="text-3xl sm:text-4xl font-bold mt-10 mb-6 text-center">AlkaList</h1>
 
         <p className="text-muted-foreground text-center max-w-xl mb-6">
-          The alkaline diet focuses on eating foods that help maintain the body&apos;s optimal pH balance.
-          It emphasizes fruits, vegetables, and plant-based ingredients while avoiding processed or acidic foods.
+          A dieta alcalina foca em ingerir alimentos que ajudam a menter o pH do sangue equilibrado.
+          Ingerindo mais frutas, vegetais, e alimentos naturais, evitando processados, industrializados, e alimentos ácidos.
+        </p>
+
+        <p className="text-muted-foreground text-center max-w-xl mb-6">
+          Para uma vida saudável recomenda-se o consumo balanceado, onde se consome em
+          torno de 60% de alcalinos e 40% de ácidos. Enquanto que em um período de limpeza, 80% de alcalinos e 20% de
+          ácidos.
         </p>
 
         <div className="flex flex-col items-center w-full max-w-md gap-4 animate-fade-in animate-duration-500 animate-ease-in">
@@ -70,7 +76,7 @@ export default function Home() {
             </div>
             <div className="flex items-center space-x-2">
               <RadioGroupItem id="treatment" value="treatment" />
-              <label htmlFor="treatment" className="text-sm font-medium">Em tratamento</label>
+              <label htmlFor="treatment" className="text-sm font-medium">Em limpeza</label>
             </div>
           </RadioGroup>
         </div>
@@ -109,6 +115,12 @@ export default function Home() {
             <DialogTitle>{selectedFood?.name}</DialogTitle>
             <DialogDescription className="mt-4">
               {selectedFood && selectedFood.comment}
+              
+              {selectedFood?.link && (
+                <div className="mt-3">
+                  <a href={selectedFood?.link} target="_blank">Saber mais</a>
+                </div>
+              )}
             </DialogDescription>
           </DialogHeader>
         </DialogContent>

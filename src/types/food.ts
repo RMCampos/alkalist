@@ -4,4 +4,5 @@ export type Food = {
   name: string
   type: FoodType
   comment: string
+  link?: string
 }

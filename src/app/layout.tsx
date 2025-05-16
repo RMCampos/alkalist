@@ -12,13 +12,15 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const basePath = process.env.NODE_ENV === 'production' ? '/alkalist' : ''
+
 export const metadata: Metadata = {
   title: "AlkaList",
   description: "Saiba o que comer e evitar na dieta alcalina.",
   themeColor: '#0a0a0a',
   icons: {
-    icon: '/favicon-32x32.png',
-    apple: '/icon-192.png',
+    icon: `${basePath}/alkalist/favicon-32x32.png`,
+    apple: `${basePath}/alkalist/alkalist/icon-192.png`,
   },
   manifest: '/manifest.json',
   openGraph: {

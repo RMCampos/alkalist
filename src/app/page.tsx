@@ -31,6 +31,8 @@ export default function Home() {
     return matchesQuery && matchesType
   })
 
+  const basePath = process.env.NODE_ENV === 'production' ? '/alkalist' : ''
+
   return (
     <main className="min-h-screen w-full px-4 sm:px-6 flex flex-col items-center justify-start bg-background text-foreground transition-colors">
       
@@ -102,7 +104,7 @@ export default function Home() {
                 className="absolute bottom-4 left-5 text-blue-500 hover:text-blue-700 text-sm"
                 aria-label={`More info about ${food.name}`}
               >
-                <Image src="/icons/info-icon.png" alt="Info" width={26} height={26} className="w-5 h-5" />
+                <Image src={`${basePath}/icons/info-icon.png`} alt="Info" width={26} height={26} className="w-5 h-5" />
               </button>
             </Card>
           ))}

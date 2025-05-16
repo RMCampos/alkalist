@@ -17,10 +17,10 @@ export const metadata: Metadata = {
   description: "Saiba o que comer e evitar na dieta alcalina.",
   themeColor: '#0a0a0a',
   icons: {
-    icon: '/alkalist/favicon-32x32.png',
-    apple: '/alkalist/icon-192.png',
+    icon: '/favicon-32x32.png',
+    apple: '/icon-192.png',
   },
-  manifest: '/alkalist/manifest.json',
+  manifest: '/manifest.json',
 };
 
 export default function RootLayout({

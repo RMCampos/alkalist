@@ -13,14 +13,30 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "AlkaList App",
+  title: "AlkaList",
   description: "Saiba o que comer e evitar na dieta alcalina.",
   themeColor: '#0a0a0a',
   icons: {
-    icon: '/favicon-32x32.png',
-    apple: '/icon-192.png',
+    icon: '/alkalist/favicon-32x32.png',
+    apple: '/alkalist/icon-192.png',
   },
-  manifest: '/manifest.json',
+  manifest: '/alkalist/manifest.json',
+  openGraph: {
+    title: 'AlkList - O que comer na Dieta Alcalina',
+    description: 'Uma ferramenta simples e eficaz para saber quais alimentos são alcalinos ou ácidos.',
+    url: 'https://rmcampos.github.io/alkalist',
+    siteName: 'AlkList',
+    images: [
+      {
+        url: '/alkalist/alka-og.png',
+        width: 1200,
+        height: 630,
+        alt: 'AlkList - O que comer na Dieta Alcalina',
+      },
+    ],
+    locale: 'pt_BR',
+    type: 'website',
+  },
 };
 
 export default function RootLayout({

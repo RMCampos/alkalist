@@ -6,7 +6,7 @@ const nextConfig: NextConfig = {
   /* config options here */
   output: 'export',
   basePath: isProd ? '/alkalist' : '',
-  assetPrefix: isProd ? '/alkalist/alkalist/' : '',
+  assetPrefix: isProd ? '/alkalist/' : '',
   images: { unoptimized: true },
 };
 

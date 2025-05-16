@@ -20,20 +20,20 @@ export const metadata: Metadata = {
   themeColor: '#0a0a0a',
   icons: {
     icon: `${basePath}/alkalist/favicon-32x32.png`,
-    apple: `${basePath}/alkalist/alkalist/icon-192.png`,
+    apple: `${basePath}/alkalist/icon-192.png`,
   },
-  manifest: '/manifest.json',
+  manifest: `${basePath}/alkalist/manifest.json`,
   openGraph: {
-    title: 'AlkList - O que comer na Dieta Alcalina',
+    title: 'AlkaList - O que comer na Dieta Alcalina',
     description: 'Uma ferramenta simples e eficaz para saber quais alimentos são alcalinos ou ácidos.',
     url: 'https://rmcampos.github.io/alkalist',
-    siteName: 'AlkList',
+    siteName: 'AlkaList',
     images: [
       {
-        url: '/alka-og.png',
+        url: `${basePath}/alkalist/alka-og.png`,
         width: 1200,
         height: 630,
-        alt: 'AlkList - O que comer na Dieta Alcalina',
+        alt: 'AlkaList - O que comer na Dieta Alcalina',
       },
     ],
     locale: 'pt_BR',

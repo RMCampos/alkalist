@@ -5,22 +5,14 @@ import { Input } from "@/components/ui/input"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Card, CardContent } from "@/components/ui/card"
 import { Separator } from "@/components/ui/separator"
-
-const foods = [
-  { name: "Avocado", type: "alkaline" },
-  { name: "Lemon", type: "alkaline" },
-  { name: "White Rice", type: "acid" },
-  { name: "Beans", type: "acid" },
-  { name: "Olive Oil", type: "alkaline" },
-  { name: "Bread", type: "acid" },
-  { name: "Spinach", type: "alkaline" },
-]
+import { Food } from "@/types/food"
+import { foodCompleteList } from "./food-complete-list"
 
 export default function Home() {
-  const [query, setQuery] = useState("")
-  const [filter, setFilter] = useState("everything")
+  const [query, setQuery] = useState<string>("")
+  const [filter, setFilter] = useState<string>("everything")
 
-  const filteredFoods = foods.filter(food => {
+  const filteredFoods = foodCompleteList.sort((a, b) => a.name.localeCompare(b.name)).filter((food: Food) => {
     const matchesQuery = food.name.toLowerCase().includes(query.toLowerCase())
     const matchesType =
       filter === "everything" ||

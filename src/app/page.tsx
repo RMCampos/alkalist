@@ -61,7 +61,7 @@ export default function Home() {
 
           <RadioGroup
             defaultValue="everything"
-            className="flex flex-col sm:flex-row gap-4 mb-6"
+            className="flex-nowrap flex justify-center gap-2 overflow-x-auto mb-6"
             onValueChange={setFilter}
           >
             <div className="flex items-center space-x-2">
@@ -78,7 +78,7 @@ export default function Home() {
             </div>
             <div className="flex items-center space-x-2">
               <RadioGroupItem id="treatment" value="treatment" />
-              <label htmlFor="treatment" className="text-sm font-medium">Em limpeza</label>
+              <label htmlFor="treatment" className="text-sm font-medium">Limpeza</label>
             </div>
           </RadioGroup>
         </div>

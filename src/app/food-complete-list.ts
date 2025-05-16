@@ -1,27 +1,26 @@
-import { Food, FoodOnCleaning } from "@/types/food";
-
-export const duringCleaningList: FoodOnCleaning[] = [
-  { name: "Açúcar (cristal, refinado, demerada, mascavo, adoçante, Stévia, Sucralose)", comment: "Adicionar..." },
-  { name: "Água com gás", comment: "Adicionar..." },
-  { name: "Álcool (vinhos, cervejas, licores, whiskies)", comment: "São bebidas que deixam o corpo muito ácido" },
-  { name: "Amendoim (castanha ou pasta)", comment: "pode conter fungos" },
-  { name: "Aveia", comment: "pode conter fungos e glúten" },
-  { name: "Café (coado, espresso, solúvel, descafeinado, nenhum tipo)", comment: "Alta acidez" },
-  { name: "Carne vermelha", comment: "Adicionar..." },
-  { name: "Chás (preto, hortelã, orégano)", comment: "Contém cafeína ou atrapalham a limpeza" },
-  { name: "Cevada (chá)", comment: "Alta acidez" },
-  { name: "Conservas (milho, ervilha, pepino, beterraba, palmito, etc)", comment: "Possuem conservantes" },
-  { name: "Farinhas (trigo, aveia, grão de bico, quinoa, nenhum tipo)", comment: "Adicionar..." },
-  { name: "Frutas desidratadas ou cristalizadas (tâmara, banana, uva, ameixa)", comment: "Sofrem alteração e a concentração de açúcar aumenta" },
-  { name: "Glúten (pães, farináceos)", comment: "Aumenta a inflamação do corpo" },
-  { name: "Industrializados (molhos, enlatados, embutidos, processados, chips, salgadinho, refrigerantes, bolachas, biscoitos, barra de cereal, macarrão)", comment: "Possuem conservantes" },
-  { name: "Leite (integral, zero, desnatado, vegetal, aveia, soja, nenhum tipo)", comment: "Adicionar..." },
-  { name: "Mel ou melado", comment: "Alta concentração de açúcar" },
-  { name: "Óleo vegetal (soja, girassol, canola, coco)", comment: "Adicionar..." },
-  { name: "Refrigerantes", comment: "Contém alta dosagem de açúcar e conservantes" },
-]
+import { Food } from "@/types/food";
 
 export const foodCompleteList: Food[] = [
+  // em tratamento
+  { name: "Não ingerir: Açúcar (cristal, refinado, demerada, mascavo, adoçante, Stévia, Sucralose)", type: "treatment" },
+  { name: "Não ingerir: Água com gás", type: "treatment" },
+  { name: "Não ingerir: Álcool (vinhos, cervejas, licores, whiskies)", type: "treatment" },
+  { name: "Não ingerir: Amendoim (castanha ou pasta)", type: "treatment" },
+  { name: "Não ingerir: Aveia", type: "treatment" },
+  { name: "Não ingerir: Café (coado, espresso, solúvel, descafeinado, nenhum tipo)", type: "treatment" },
+  { name: "Não ingerir: Carne vermelha", type: "treatment" },
+  { name: "Não ingerir: Chás (preto, hortelã, orégano)", type: "treatment" },
+  { name: "Não ingerir: Cevada (chá)", type: "treatment" },
+  { name: "Não ingerir: Conservas (milho, ervilha, pepino, beterraba, palmito, etc)", type: "treatment" },
+  { name: "Não ingerir: Farinhas (trigo, aveia, grão de bico, quinoa, nenhum tipo)", type: "treatment" },
+  { name: "Não ingerir: Frutas desidratadas ou cristalizadas (tâmara, banana, uva, ameixa, tamara)", type: "treatment" },
+  { name: "Não ingerir: Glúten (pães, farináceos)", type: "treatment" },
+  { name: "Não ingerir: Industrializados (molhos, enlatados, embutidos, processados, chips, salgadinho, refrigerantes, bolachas, biscoitos, barra de cereal, macarrão)", type: "treatment" },
+  { name: "Não ingerir: Leite (integral, zero, desnatado, vegetal, aveia, soja, nenhum tipo)", type: "treatment" },
+  { name: "Não ingerir: Mel ou melado", type: "treatment" },
+  { name: "Não ingerir: Óleo vegetal (soja, girassol, canola, coco)", type: "treatment" },
+  { name: "Não ingerir: Refrigerantes", type: "treatment" },
+
   { name: "Abobrinhas", type: "acid"},
   { name: "Açúcar (cristal, refinado, demerada, mascavo, adoçante, Stévia, Sucralose)", type: "acid" },
   { name: "Água com gás (rever)", type: "acid" },
@@ -32,7 +31,7 @@ export const foodCompleteList: Food[] = [
   { name: "Azeite de oliva extra virgem", type: "acid" },
   { name: "Azeitona in natura", type: "acid" },
   { name: "Bacalhau", type: "acid" },
-  { name: "Cacau amargo", type: "acid" },
+  { name: "Cacau amargo (chocolate)", type: "acid" },
   { name: "Café (coado, espresso, solúvel, descafeinado, nenhum tipo)", type: "acid" },
   { name: "Carne de frango", type: "acid" },
   { name: "Carne vermelha", type: "acid" },

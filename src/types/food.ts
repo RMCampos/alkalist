@@ -1,11 +1,6 @@
-export type FoodType = 'alkaline' | 'acid'
+export type FoodType = 'alkaline' | 'acid' | 'treatment'
 
 export type Food = {
   name: string
   type: FoodType
-}
-
-export type FoodOnCleaning = {
-  name: string
-  comment: string
 }

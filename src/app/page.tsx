@@ -50,6 +50,29 @@ export default function Home() {
           ácidos.
         </p>
 
+        <div className="text-muted-foreground text-center max-w-xl mb-8 p-6 bg-muted/50 rounded-lg">
+          <h2 className="text-xl font-semibold mb-4 text-foreground">Minerais e Desintoxicação</h2>
+          <p className="mb-4">
+            A remoção de metais pesados como alumínio, mercúrio, chumbo e outros é essencial para a saúde.
+            Estes elementos podem se acumular no organismo ao longo do tempo, causando diversos problemas de saúde.
+            A desintoxicação natural ajuda a eliminar estas toxinas e restaurar o equilíbrio corporal.
+          </p>
+          <h3 className="text-lg font-semibold mb-3 text-foreground">Agentes Naturais de Desintoxicação</h3>
+          <ul className="text-left space-y-2 mb-4">
+            <li><strong>Zeólita:</strong> Rocha vulcânica que absorve metais pesados e toxinas através da sua estrutura microporosa.</li>
+            <li><strong>Magnésio:</strong> Mineral essencial que auxilia em mais de 300 reações bioquímicas no organismo.</li>
+            <li><strong>Prata Coloidal:</strong> Suporte natural para o sistema imunológico com propriedades antibacterianas.</li>
+            <li><strong>Carvão Ativado:</strong> Poderoso adsorvente natural que elimina toxinas e impurezas do trato digestivo.</li>
+            <li><strong>Chlorella:</strong> Alga verde rica em clorofila que liga-se a metais pesados e facilita sua eliminação.</li>
+            <li><strong>Spirulina:</strong> Superalimento rico em nutrientes que auxilia na desintoxicação e fortalece a imunidade.</li>
+            <li><strong>Sementes de Chia:</strong> Rico em ômega-3 e fibras que auxiliam na limpeza intestinal e absorção de toxinas.</li>
+          </ul>
+          <p className="text-sm italic">
+            Estes complementos naturais trabalham em sinergia para purificar o organismo,
+            fortalecer o sistema imunológico e promover o equilíbrio alcalino do corpo.
+          </p>
+        </div>
+
         <div className="flex flex-col items-center w-full max-w-md gap-4 animate-fade-in animate-duration-500 animate-ease-in">
           <Input
             type="text"

@@ -1,4 +1,4 @@
-name: Build Deploy to Pages
+name: Deploy Next.js to GitHub Pages
 
 on:
   workflow_dispatch:
@@ -12,23 +12,17 @@ concurrency:
   group: pages
   cancel-in-progress: true
 
-env:
-  APP_FOLDER: "alkalist"
-
 jobs:
   build:
-    runs-on: easynode-debian
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
-      - name: Cache npm dependencies
-        uses: actions/cache@v3
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
         with:
-          path: ~/.npm
-          key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-npm-
+          node-version: '20'-
 
       - name: Install dependencies
         run: npm ci
@@ -36,23 +30,9 @@ jobs:
       - name: Build and export static site
         run: npm run build
 
-      - name: Install rsync + ssh client
-        run: apt-get update -qq && apt-get install -y -qq rsync openssh-client
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./out
 
-      - name: Configure SSH
-        run: |
-          mkdir -p ~/.ssh
-          echo "${{ secrets.DEPLOY_SSH_KEY }}" > ~/.ssh/deploy_key
-          chmod 600 ~/.ssh/deploy_key
-          ssh-keyscan -H "${{ secrets.DEPLOY_HOST }}" >> ~/.ssh/known_hosts
-
-      - name: Ensure destination folder exists
-        run: |
-          ssh -i ~/.ssh/deploy_key deploy@${{ secrets.DEPLOY_HOST }} \
-          "mkdir -p /srv/sites/${{ env.APP_FOLDER }} && chmod 755 /srv/sites/${{ env.APP_FOLDER }}"
-
-      - name: Upload site
-        run: |
-          rsync -avz --delete \
-            -e "ssh -i ~/.ssh/deploy_key" \
-            ./out/ deploy@${{ secrets.DEPLOY_HOST }}:/srv/sites/${{ env.APP_FOLDER }}/

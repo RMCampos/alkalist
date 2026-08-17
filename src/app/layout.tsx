@@ -20,10 +20,10 @@ export const metadata: Metadata = {
   description: "Saiba o que comer e evitar na dieta alcalina.",
   themeColor: '#0a0a0a',
   icons: {
-    icon: `${basePath}/alkalist/favicon-32x32.png`,
-    apple: `${basePath}/alkalist/icon-192.png`,
+    icon: `${basePath}/favicon-32x32.png`,
+    apple: `${basePath}/icon-192.png`,
   },
-  manifest: `${basePath}/alkalist/manifest.json`,
+  manifest: `${basePath}/manifest.json`,
   openGraph: {
     title: 'AlkaList - O que comer na Dieta Alcalina',
     description: 'Uma ferramenta simples e eficaz para saber quais alimentos são alcalinos ou ácidos.',
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     siteName: 'AlkaList',
     images: [
       {
-        url: `${basePath}/alkalist/alka-og.png`,
+        url: `${basePath}/alka-og.png`,
         width: 1200,
         height: 630,
         alt: 'AlkaList - O que comer na Dieta Alcalina',
